@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/opening_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,14 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const OurFirstScreen(
-        title: 'Flutter Demo Home Page',
-      ),
-    );
+        // Cupertino App
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const OpeningScreen()
+
+        // OurFirstScreen(
+        //   title: 'Flutter Demo Home Page',
+        // ),
+        );
   }
 }
 
@@ -196,9 +201,44 @@ class _OurFirstScreenState extends State<OurFirstScreen> {
 
 ////////  OOP    ////////
 
+// * Inheritance : to take the charactaristics of a specific class (extends keyword "in other langs we use :")
+
 // Modifiers:
 // 1- UnderScore (_): when typed before something means that this var/function/class is Private.
+
+
+
+
+
 
 //////// Flutter  /////////
 ///
 ///
+
+//1- everything in flutter is a widget
+//2- there are two main types of widgets:
+
+// A] Stateless Widget   
+// B] Statefull Widget 
+
+// what is the diff between Column , Row and Stack?
+
+// 1- Column: a widget that allow us to put widgets above each other, Y axis
+// 2- Row: a widget that allow us to put widgets beside, next to  each other, X axis
+// 3- Stack :  widget that allow us to put widgets  above each other in 3d dimensionly ,  Z axis
+
+
+
+/////  How to get the full hight/ width of any device
+///  MediaQuery.of(context).size.hight/width
+/// 
+
+/// what is the diff between MediaQuery.of(contxt).size.width And Double.infinity
+/// MediaQuery: get the full hight/ width of any device
+///  Double.infinity : get the availble width or hight
+/// 
+
+
+
+/// Responsive design : The design that responses and addaptes to any device screen size
+/// please dont use static values in spaces and dimensions
