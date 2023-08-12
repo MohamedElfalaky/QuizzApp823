@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quizz_iti_823/Screens/login_screen.dart';
 
 class OpeningScreen extends StatelessWidget {
   const OpeningScreen({super.key});
@@ -70,7 +71,19 @@ class OpeningScreen extends StatelessWidget {
             Container(
                 margin: EdgeInsets.symmetric(horizontal: 12, vertical: 20),
                 width: double.infinity,
-                child: ElevatedButton(onPressed: () {}, child: Text("Start"))),
+                child: ElevatedButton(
+                    onPressed: () {
+                      // انا هنا محتاج امتب الكود او الامر اللي هيخليني انفيجيت علي اللوجن
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              const LoginScreen(),
+                        ),
+                      );
+                    },
+                    child: Text("Start"))),
 
             // Container(
             //   margin: EdgeInsets.all(20), // المسافة بين الشيء ومحيطه الخارجي

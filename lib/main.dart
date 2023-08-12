@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/category_screen.dart';
+import 'Screens/login_screen.dart';
 import 'Screens/opening_screen.dart';
 
 void main() {
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const OpeningScreen()
+        home: OpeningScreen()
 
         // OurFirstScreen(
         //   title: 'Flutter Demo Home Page',
@@ -26,124 +28,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class OurFirstScreen extends StatefulWidget {
-  const OurFirstScreen({
-    super.key,
-    required this.title,
-  });
-
-  final String title;
-
-  // final int? counterTwo;
-
-  @override
-  State<OurFirstScreen> createState() => _OurFirstScreenState();
-}
-
-class _OurFirstScreenState extends State<OurFirstScreen> {
-  int _counter = 0; // initialization
-
-  // int ourDouble = 2; // initialization
-
-  // String trackName = "ITI 8-2023"; // initialization
-
-  // bool isAugs = false; // initialization
-
-  // var name; // declearation
-
-  String _incrementCounter() {
-    // void : no return
-
-    setState(() {
-      _counter++;
-    });
-
-    return "hellooooooo";
-  }
-
-  void _decrementCounter() {
-    if (_counter > 0) {
-      setState(() {
-        _counter--;
-      });
-    }
-  }
-
-  // Person p1 = new Person()
-
-  SizedBox mySizedBox = new SizedBox(
-    height: 100,
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    const String trackName = "ITI 8-2023"; //
-
-    final int counterTwo;
-
-    counterTwo = 2;
-
-    // counterTwo = 4;  can not initialized again
-
-    // trackName = "jkss";
-
-    // const means : the variable that is constant in both : run time and compile time
-    // compile time : when i am writing a code in the ide before running in the device .
-    // run time error: Error that appears when running the app.
-
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("ITI 8 -2023"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text("Hello world, we are ITI 8/2023",
-                  style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold)),
-
-              // ourItiSizedBox,
-
-              // mySizedBox,
-
-              SizedBox(
-                height: 100,
-              ),
-
-              const Text(
-                'لقد قمت بالضغط على الزر هذا العدد من المرات',
-                style: TextStyle(fontSize: 25),
-              ),
-              Text(
-                '$_counter',
-                style: const TextStyle(
-                    color: Colors.green,
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
-            ),
-            FloatingActionButton(
-              onPressed: _decrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.minimize),
-            ),
-          ],
-        ));
-  }
-}
 
 /////////  Dart ////////
 
@@ -242,3 +126,33 @@ class _OurFirstScreenState extends State<OurFirstScreen> {
 
 /// Responsive design : The design that responses and addaptes to any device screen size
 /// please dont use static values in spaces and dimensions
+/// 
+/// 1- Media query
+/// 2- using Column and row approperiatly 
+/// 3- Expanded And Flexible 
+/// 
+
+
+
+
+// Stack widget works inside the boundries of his parent 
+
+
+// how to change anything to a button ?
+// 1- Gesture detector
+// 2- inkwell
+
+
+
+// Navigation between screen: we have many methods to navigate
+// Concepts of navigation:
+// 1- navigate to a screen
+// 2- back to a screen
+// 3- Navigate and cant back 
+
+
+
+// types of navigations:
+// 1- Material(Anonymous) Navigation  -----> small projects, M , L
+// 2- Named Navigation (Routes) ---------> medium projects
+// 3- Generator Navigation  --------> Large and Huge projects
