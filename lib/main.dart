@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Screens/category_screen.dart';
 import 'Screens/login_screen.dart';
 import 'Screens/opening_screen.dart';
+import 'Screens/quiz_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -81,9 +82,29 @@ class MyApp extends StatelessWidget {
 //
 // }
 
-// Object
+
+/////////   Null Safety  /////////////
+
+
+
 
 ////////  OOP    ////////
+///
+
+
+
+/// Constructor : Is a function has the same name of the class,
+///  1- first thing that happed when we call 
+/// the class is what inside its constructor function.
+/// 
+/// 2- we can pass data from parent widget to child widget 
+/// using the constructor
+/// 
+/// //// We can pass data using two methods:
+/// 1- Named Argument: to write the name of the parameter before passing it
+/// 2- Positional Arguments: to write the param directly without its name
+/// 
+
 
 // * Inheritance : to take the charactaristics of a specific class (extends keyword "in other langs we use :")
 
