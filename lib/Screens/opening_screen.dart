@@ -83,7 +83,9 @@ class OpeningScreen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: Text("Start"))),
+                    child: Text(
+                      "next",
+                    ))),
 
             // Container(
             //   margin: EdgeInsets.all(20), // المسافة بين الشيء ومحيطه الخارجي

@@ -118,7 +118,7 @@ class LoginScreen extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => CategoryScreen(),
