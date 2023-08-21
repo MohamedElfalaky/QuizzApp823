@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Screens/category_screen.dart';
+import 'Screens/counter_screen.dart';
 import 'Screens/login_screen.dart';
 import 'Screens/opening_screen.dart';
 import 'Screens/quiz_screen.dart';
@@ -91,9 +92,7 @@ class MyApp extends StatelessWidget {
 ////////  OOP    ////////
 ///
 
-
-
-/// Constructor : Is a function has the same name of the class,
+///0-  Constructor : Is a function has the same name of the class,
 ///  1- first thing that happed when we call 
 /// the class is what inside its constructor function.
 /// 
@@ -106,7 +105,34 @@ class MyApp extends StatelessWidget {
 /// 
 
 
-// * Inheritance : to take the charactaristics of a specific class (extends keyword "in other langs we use :")
+// 1- Inheritance : to take the charactaristics of a specific class (extends keyword "in other langs we use :")
+// when i extends to a specific class, i talk all its characters (Functions (method) - variabled (parameter) )
+
+
+// 2- Abstruction: 
+// Abstract Class:  Class that can not be instantiated
+// Abstract function : a function with no body inside Abstract class, when i inherit from this 
+// Abstract class, the abstract method must be Implement (Build)
+
+
+// 3- Encapsulation : TO Isolate the class content from the outside ,to avoid un intended outside errors(security)
+// by using (for an example ) "_" modifire to indicate that this method/ parameter
+// is Private.
+// and use setters an d getter to control this var without connecting with it directly.
+// 
+
+
+// 4- Plyorphisim :
+//  - OverRide: اعادة صياغة الدالة الموروثة بتعديلاتي الخاصة
+// re-write the extended method with my own edits
+// to override the function
+
+//  - OverLoad: تعريف نفس الدالة بنفس الاسم ولكن مع مدخلات مختلفة ومخرجات مختلفة
+//  use the same function with different parameters and with different return
+// to overload the function   // how to apply overload in dart lang
+
+
+
 
 // Modifiers:
 // 1- UnderScore (_): when typed before something means that this var/function/class is Private.

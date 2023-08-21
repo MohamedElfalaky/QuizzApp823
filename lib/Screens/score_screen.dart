@@ -1,9 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:quizz_iti_823/Screens/opening_screen.dart';
 
-class ScoreScreen extends StatelessWidget {
-  const ScoreScreen({super.key});
+import '../Global/quizz_data.dart';
 
+class ScoreScreen extends StatefulWidget {
+  final int totalScore;
+  final int totalNumOfQuestion;
+  // StreamController? myStream;
+  // Timer? myTimer;
+
+  ScoreScreen(
+      {super.key, required this.totalScore, required this.totalNumOfQuestion});
+
+  @override
+  State<ScoreScreen> createState() => _ScoreScreenState();
+}
+
+class _ScoreScreenState extends State<ScoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,19 +29,20 @@ class ScoreScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             RichText(
-                text: const TextSpan(
+                text: TextSpan(
                     text: "Congrate ",
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                    style: const TextStyle(fontSize: 20, color: Colors.black),
                     children: [
                   TextSpan(
-                      text: "Mohamed \n",
+                      text: "${userNameController.text} \n",
                       style: TextStyle(
                           color: Color.fromARGB(255, 196, 12, 52),
                           fontSize: 25)),
-                  TextSpan(text: "your score is "),
+                  const TextSpan(text: "your score is "),
                   TextSpan(
-                      text: "6/10",
-                      style: TextStyle(
+                      text:
+                          "${widget.totalScore} / ${widget.totalNumOfQuestion}",
+                      style: const TextStyle(
                           color: Color.fromARGB(255, 196, 12, 52),
                           fontSize: 25)),
                 ])),
@@ -48,11 +64,21 @@ class ScoreScreen extends StatelessWidget {
                     (Route<dynamic> route) => false,
                   );
                 },
-                child: Text("Play again"))
+                child: const Text("Play again"))
             // Text("Congrate Mohamed your score is 6/10")
           ],
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    userNameController.clear();
+    // widget.myStream!.close();           // Memory leak
+    // widget.myTimer!.cancel();           // Memory leak
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizz_iti_823/Screens/counter_screen.dart';
 import 'package:quizz_iti_823/Screens/quiz_screen.dart';
 
 import '../Widgets/category_container.dart';
