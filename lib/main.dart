@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:quizz_iti_823/Cubits/ChangeSelectedValue/change_selected_value_cubit.dart';
+import 'package:quizz_iti_823/Cubits/CounterCubit/counter_cubit.dart';
+import 'package:quizz_iti_823/Cubits/LoginCubit/login_cubit.dart';
+import 'package:quizz_iti_823/Cubits/RadioToggleCubit/radio_toggle_cubit.dart';
+import 'package:quizz_iti_823/Cubits/ReplaceUICubit/replace_ui_cubit.dart';
+import 'package:quizz_iti_823/Cubits/ShowHidePass/show_hide_password_cubit.dart';
+import 'package:quizz_iti_823/Screens/opening_screen.dart';
 
-import 'Screens/category_screen.dart';
-import 'Screens/counter_screen.dart';
-import 'Screens/login_screen.dart';
-import 'Screens/opening_screen.dart';
-import 'Screens/quiz_screen.dart';
+import 'Screens/StateManagement/counter_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'Screens/StateManagement/counter_screen_with_cubit.dart';
+import 'Screens/StateManagement/task8.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,18 +22,40 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        // Cupertino App
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CounterCubit>(
+          create: (BuildContext context) => CounterCubit(),
         ),
-        home: OpeningScreen()
+        BlocProvider<ReplaceUiCubit>(
+          create: (BuildContext context) => ReplaceUiCubit(),
+        ),
+        BlocProvider<ChangeSelectedValueCubit>(
+          create: (BuildContext context) => ChangeSelectedValueCubit(),
+        ),
+        BlocProvider<ShowHidePasswordCubit>(
+          create: (BuildContext context) => ShowHidePasswordCubit(),
+        ),
+        BlocProvider<RadioToggleCubit>(
+          create: (BuildContext context) => RadioToggleCubit(),
+        ),
+        BlocProvider<LoginCubit>(
+          create: (BuildContext context) => LoginCubit(),
+        ),
+      ],
+      child: MaterialApp(
+          // Cupertino App
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: CounterScreenWithCubit()
 
-        // OurFirstScreen(
-        //   title: 'Flutter Demo Home Page',
-        // ),
-        );
+          // OurFirstScreen(
+          //   title: 'Flutter Demo Home Page',
+          // ),
+          ),
+    );
   }
 }
 
@@ -203,3 +232,62 @@ class MyApp extends StatelessWidget {
 // 1- Material(Anonymous) Navigation  -----> small projects, M , L
 // 2- Named Navigation (Routes) ---------> medium projects
 // 3- Generator Navigation  --------> Large and Huge projects
+
+
+
+
+
+
+/*  
+1- Version Control | Git (Github)
+2- Dart *** 
+
+- Data types
+- variables
+- data structure & data base (Map)
+- functions
+- Conditioning (If condition)
+- Looping (For Loop - Listview.builder() - map - while - do while)
+- Future (async - await) 
+- Switch and case 
+- try and catch
+
+
+-------------------------
+// while - dowhile
+// higher order function
+***** stream in dart language ******
+
+
+
+
+
+
+3- OOP ***
+4- Flutter  
+- UI coding  (UI UX designer)
+- State management 
+
+
+- HTTP request (Call an API - Fetching data from API  - Connect with server - Call a remote datebase) --- Back end
+- Notification
+- Animation
+
+- UI UX 
+
+- Back end & data base
+
+
+5- Project
+- 3 days 
+
+
+-----> ايه اللي باقيلي واذاكره ازاي
+----->>  اعمل ايه ف الانترفيو
+----->  اعمل cv ازاي 
+-----> سوق العمل 
+-----> الحصول علي وظيفة
+------>  هو انا جاهز ؟ 
+*/
+
+
